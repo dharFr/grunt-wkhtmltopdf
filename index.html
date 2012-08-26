@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Grunt-wkhtmltopdf by dharFr</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Grunt-wkhtmltopdf</h1>
+        <p>Grunt Task that uses wkhtmltopdf to convert HTML files to PDF</p>
+
+        <p class="view"><a href="https://github.com/dharFr/grunt-wkhtmltopdf">View the Project on GitHub <small>dharFr/grunt-wkhtmltopdf</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/dharFr/grunt-wkhtmltopdf/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/dharFr/grunt-wkhtmltopdf/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/dharFr/grunt-wkhtmltopdf">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>grunt-wkhtmltopdf</h1>
+
+<p>A simple <a href="https://github.com/cowboy/grunt">Grunt</a> task that uses <a href="http://code.google.com/p/wkhtmltopdf/">wkhtmltopdf</a> to convert HTML files to PDF.
+Convertion to PDF takes care of <code>@media print</code> CSS rules and preserves links to remote web pages.</p>
+
+<h2>Getting Started</h2>
+
+<h3>Setting up wkhtmltopdf</h3>
+
+<p>Download and install wkhtmltopdf from the <a href="http://code.google.com/p/wkhtmltopdf/downloads/list">project page</a>.</p>
+
+<p>Make sure <code>wkhtmltopdf</code> is accessible from your <code>PATH</code> (Try <code>wkhtmltopdf -V</code> in your Terminal). 
+I'm on Mas OS X, so I created the following symlink to my <code>/usr/local/bin/</code> folder:</p>
+
+<pre><code>ln -s /usr/local/bin/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf /usr/local/bin/wkhtmltopdf
+</code></pre>
+
+<h3>Use it with grunt</h3>
+
+<p>Install this grunt plugin next to your project's <a href="https://github.com/cowboy/grunt/blob/master/docs/getting_started.md">grunt.js gruntfile</a> with: <code>npm install grunt-wkhtmltopdf</code></p>
+
+<p>Then add this line to your project's <code>grunt.js</code> gruntfile:</p>
+
+<div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">'grunt-wkhtmltopdf'</span><span class="p">);</span>
+</pre></div>
+
+<h2>Documentation</h2>
+
+<p>Simply add the following to your gruntfile:</p>
+
+<div class="highlight"><pre>    <span class="c1">//...</span>
+    <span class="nx">wkhtmltopdf</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="s1">'path/to/some/html/file/*.html'</span><span class="p">,</span>
+      <span class="nx">dest</span><span class="o">:</span> <span class="s1">'pdf/output/'</span>
+    <span class="p">},</span>
+    <span class="c1">//...</span>
+</pre></div>
+
+<p>Then run <code>grunt wkhtmltopdf</code> or use it as any other grunt task. Every <code>html</code> file in your <code>path/to/some/html/file/</code> folder will be turned into a PDF and saved to <code>pdf/output/</code> folder.</p>
+
+<h2>Contributing</h2>
+
+<p>In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using <a href="https://github.com/cowboy/grunt">grunt</a>.</p>
+
+<h2>Release History</h2>
+
+<ul>
+<li>
+<em>v0.1.0</em>: First Release</li>
+</ul><h2>License</h2>
+
+<p>Copyright (c) 2012 Olivier Audard<br>
+Licensed under the MIT license.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/dharFr">dharFr</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-1823374-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
