@@ -1,6 +1,6 @@
 # grunt-wkhtmltopdf
 
-A simple [Grunt][grunt] task that uses [wkhtmltopdf][wkhtmltopdf] to convert HTML files to PDF.
+A simple [Grunt][grunt] multitask that uses [wkhtmltopdf][wkhtmltopdf] to convert HTML files to PDF.
 Convertion to PDF takes care of `@media print` CSS rules and preserves links to remote web pages.
 
 ## Getting Started
@@ -32,18 +32,24 @@ grunt.loadNpmTasks('grunt-wkhtmltopdf');
 [getting_started]: https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
 
 ## Documentation
-Simply add the following to your gruntfile:
+Simply add task definition in your gruntfile. See the folllowing example:
 
 ```javascript
     //...
     wkhtmltopdf: {
-      src: 'path/to/some/html/file/*.html',
-      dest: 'pdf/output/'
+      dev: {
+        src: 'path/to/some/html/file/*.html',
+        dest: 'pdf/output/'
+      },
+      prod: {
+        src: 'path/to/some/html/file/*.html',
+        dest: 'pdf/output/'
+      }
     },
     //...
 ```
 
-Then run `grunt wkhtmltopdf` or use it as any other grunt task. Every `html` file in your `path/to/some/html/file/` folder will be turned into a PDF and saved to `pdf/output/` folder.
+Run `grunt wkhtmltopdf` to execute all the targets or `grunt wkhtmltopdf:targetname` to execute a specific target. Every `html` file defined by the `src` parameter will be turned into a PDF and saved to `dest` folder.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][grunt].
@@ -51,6 +57,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Release History
 
  - *v0.1.0*: First Release
+ - *v0.2.0*: Fixed compatibility with grunt 0.4 
+ - *v0.3.0*: grunt-wkhtmltopdf is now a multi-task
 
 ## License
 Copyright (c) 2012 Olivier Audard  

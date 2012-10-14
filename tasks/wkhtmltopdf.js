@@ -16,14 +16,10 @@ module.exports = function(grunt) {
   // ==========================================================================
   var helper = require('./lib/wkhtmltopdf-lib').init(grunt);
 
-  grunt.registerTask('wkhtmltopdf', 'Your task description goes here.', function() {
-    grunt.config.requires('wkhtmltopdf.src');
-    grunt.config.requires('wkhtmltopdf.dest');
+  grunt.registerMultiTask('wkhtmltopdf', 'Your task description goes here.', function() {
 
-    var conf = grunt.config('wkhtmltopdf');
-
-    var htmlFiles = grunt.file.expandFiles(conf.src),
-        dest = (conf.dest && conf.dest !== '') ? conf.dest + '/' : '';
+    var htmlFiles = grunt.file.expandFiles(this.file.src),
+        dest = (this.file.dest && this.file.dest !== '') ? this.file.dest + '/' : '';
 
     grunt.log.writeln("pdf output is: " + dest);
 
