@@ -28,7 +28,7 @@ grunt.loadNpmTasks('grunt-wkhtmltopdf');
 
 [wkhtmltopdf]: http://code.google.com/p/wkhtmltopdf/
 [wkhtmltopdf_dl]: http://code.google.com/p/wkhtmltopdf/downloads/list
-[grunt]: https://github.com/cowboy/grunt
+[grunt]: https://github.com/gruntjs/grunt
 [getting_started]: https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
 
 ## Documentation
