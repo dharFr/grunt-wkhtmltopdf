@@ -10,11 +10,14 @@ Convertion to PDF takes care of `@media print` CSS rules and preserves links to 
 Download and install wkhtmltopdf from the [project page][wkhtmltopdf_dl].
 
 Make sure `wkhtmltopdf` is accessible from your `PATH` (Try `wkhtmltopdf -V` in your Terminal). 
-I'm on Mas OS X, so I created the following symlink to my `/usr/local/bin/` folder:
+I'm on Mac OS X, so I created the following symlink to my `/usr/local/bin/` folder:
 
 ```
 ln -s /usr/local/bin/wkhtmltopdf.app/Contents/MacOS/wkhtmltopdf /usr/local/bin/wkhtmltopdf
 ```
+
+You can also install it via homebrew: `$ brew install wkhtmltopdf`.
+
 
 ### Use it with grunt
 
