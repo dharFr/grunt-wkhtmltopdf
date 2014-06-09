@@ -18,12 +18,12 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('wkhtmltopdf', 'Your task description goes here.', function() {
 
-    var htmlFiles = grunt.file.expandFiles(this.file.src),
-        dest = (this.file.dest && this.file.dest !== '') ? this.file.dest + '/' : '';
+    this.files.forEach(function(file) {
+      var srcpath = file.src.toString(),
+          dest = (file.dest && file.dest !== '') ? file.dest + '/' : '';
 
-    grunt.log.writeln("pdf output is: " + dest);
+      grunt.log.writeln("pdf output is: " + dest);
 
-    htmlFiles.forEach(function(srcpath) {
       var dir = dest + srcpath.replace(/.*\/([^\/]+)\/[^\/]+\.html/, '$1');
 
       // Create dest folder as wkhtmltopdf won't generate output if it doesn't exist
