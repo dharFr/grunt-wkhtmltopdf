@@ -1,12 +1,14 @@
+'use strict';
+
 module.exports = function(grunt) {
+
+  // Load grunt tasks automatically
+  require('load-grunt-tasks')(grunt);
 
   // Project configuration.
   grunt.initConfig({
-    test: {
-      files: ['test/**/*.js']
-    },
-    lint: {
-      files: ['grunt.js', 'tasks/**/*.js', 'test/**/*.js']
+    nodeunit: {
+      all: ['test/**/_test.js']
     },
     watch: {
       files: '<config:lint.files>',
@@ -25,16 +27,19 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         node: true,
-        es5: true
       },
-      globals: {}
+      all: [
+        'Gruntfile.js',
+        'tasks/{,*/}*.js',
+        'test/{,*/}*.js',
+      ]
     }
   });
 
-  // Load local tasks.
-  grunt.loadTasks('tasks');
-
   // Default task.
-  grunt.registerTask('default', 'lint test');
+  grunt.registerTask('default', [
+    'jshint',
+    'nodeunit:all'
+  ]);
 
 };
