@@ -1,7 +1,7 @@
 {
   "name": "grunt-wkhtmltopdf",
   "description": "Grunt Task that uses wkhtmltopdf to convert HTML files to PDF",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "homepage": "http://www.dhar.fr/grunt-wkhtmltopdf/",
   "author": {
     "name": "Olivier Audard",

@@ -62,7 +62,10 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
  - *v0.1.0*: First Release
  - *v0.2.0*: Fixed compatibility with grunt 0.4 
  - *v0.3.0*: grunt-wkhtmltopdf is now a multi-task
-
+ - *v0.4.0*: 
+    - Update project config files to work with Grunt 0.4
+    - Update wkthmltopdf task to use Grunt 0.4 multi-task API
+    - Improve predictability of the destination for created PDFs 
 ## License
 Copyright (c) 2012 Olivier Audard  
 Licensed under the MIT license.
