@@ -66,6 +66,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
     - Update project config files to work with Grunt 0.4
     - Update wkthmltopdf task to use Grunt 0.4 multi-task API
     - Improve predictability of the destination for created PDFs 
+
 ## License
 Copyright (c) 2012 Olivier Audard  
 Licensed under the MIT license.
