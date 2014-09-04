@@ -51,15 +51,24 @@ module.exports = function(grunt) {
           "Converting " + src + " -> " + dest
         );
 
-        // Launch PhantomJS.
+        // default args
+        var args = [
+          '--dpi', '96',        // workarround to wkhtmltopdf letter-spacing bug (see http://code.google.com/p/wkhtmltopdf/issues/detail?id=72)
+          '--print-media-type', // Use @print media type
+        ];
+
+        // overrides the args
+        if (file.args) {
+          args = file.args;
+        }
+
+        // adds the src and dest
+        args = args.concat([src, dest]);
+
+        // Launch wkhtmltopdf.
         helper.convert({
           code: 90,
-          args: [
-              '--dpi', '96',        // workarround to wkhtmltopdf letter-spacing bug (see http://code.google.com/p/wkhtmltopdf/issues/detail?id=72)
-              '--print-media-type', // Use @print media type
-              src,
-              dest
-            ],
+          args: args,
           done: function(err) {
             if (err) {
               grunt.log('>>>', err);
