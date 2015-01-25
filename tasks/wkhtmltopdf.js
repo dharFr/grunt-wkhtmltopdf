@@ -18,9 +18,13 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('wkhtmltopdf', 'Your task description goes here.', function() {
 
-    var done = this.async();
+    // using grunt async support so we can be sure task doesn't
+    // end before PDF processing does: http://gruntjs.com/api/inside-tasks
+    var done = this.async(),
+        files = this.files;
 
-    this.files.forEach(function(file, filesIndex) {
+    // iterate through each file grouping
+    files.forEach(function(file, filesIndex) {
 
       var pathlib = require('path');
       // calculate the destination directory and ensure it exists, since
@@ -67,7 +71,7 @@ module.exports = function(grunt) {
               grunt.log('>>>', err);
             }
             // if this is the last src of the last file, we are done.
-            if((filesIndex+1 >= files.length) && (srcIndex+1 >= src.length)) {
+            if((filesIndex+1 >= files.length) && (srcIndex+1 >= file.src.length)) {
               done();
             }
           }
