@@ -87,8 +87,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Release History
 
  - *v0.5.0*:
-    - Merged #12 (Fix #11) : Added async support
-    - Merged #9 : Added ability to override the arguments
+    - Merged [#12](https://github.com/dharFr/grunt-wkhtmltopdf/pull/12) (Fix [#11](https://github.com/dharFr/grunt-wkhtmltopdf/issues/11)) : Added async support
+    - Merged [#9](https://github.com/dharFr/grunt-wkhtmltopdf/pull/9) : Added ability to override the arguments
  - *v0.4.0*:
     - Update project config files to work with Grunt 0.4
     - Update wkthmltopdf task to use Grunt 0.4 multi-task API
