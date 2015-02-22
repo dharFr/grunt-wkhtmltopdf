@@ -60,7 +60,7 @@ module.exports = function(grunt) {
         // default args
         var args = [
           '--dpi', '96',        // workarround to wkhtmltopdf letter-spacing bug (see http://code.google.com/p/wkhtmltopdf/issues/detail?id=72)
-          '--print-media-type', // Use @print media type
+          '--print-media-type'  // Use @print media type
         ];
 
         // overrides the args
